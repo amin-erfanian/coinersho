@@ -1,0 +1,16 @@
+body {
+  min-height: 100vh;
+  overflow: hidden auto;
+  font-family: var(--font-iranyekan), sans-serif;
+  background-color: var(--palette-surface);
+  color: var(--palette-on-surface);
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+}

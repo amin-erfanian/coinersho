@@ -1,0 +1,40 @@
+$typography: (
+  default: (
+    label-large: (
+      font-size: 1rem,
+      font-weight: 700,
+      line-height: 1.25rem,
+      letter-spacing: 0,
+    ),
+    label-medium: (
+      font-size: 0.875rem,
+      font-weight: 400,
+      line-height: 1rem,
+      letter-spacing: 0,
+    ),
+    label-small: (
+      font-size: 0.75rem,
+      font-weight: 400,
+      line-height: 1rem,
+      letter-spacing: 0,
+    ),
+    body-large: (
+      font-size: 1rem,
+      font-weight: 400,
+      line-height: 1.75rem,
+      letter-spacing: 0,
+    ),
+    body-medium: (
+      font-size: 0.875rem,
+      font-weight: 400,
+      line-height: 1.5rem,
+      letter-spacing: 0,
+    ),
+    body-small: (
+      font-size: 0.75rem,
+      font-weight: 400,
+      line-height: 1rem,
+      letter-spacing: 0,
+    ),
+  ),
+);

@@ -1,0 +1,25 @@
+@use "./typography" as *;
+@use "./breakpoints" as *;
+
+@mixin media-query($screen-size) {
+  $size: map-get($breakpoints, $screen-size);
+
+  @if $size {
+    @media only screen and (max-width: $size) {
+      @content;
+    }
+  }
+}
+
+@mixin flex(
+  $dir: row,
+  $wrap: nowrap,
+  $align: flex-start,
+  $justify: flex-start
+) {
+  display: flex;
+  flex-direction: $dir;
+  flex-wrap: $wrap;
+  align-items: $align;
+  justify-content: $justify;
+}
