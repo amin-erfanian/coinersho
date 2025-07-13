@@ -1,4 +1,3 @@
-@use "./typography" as *;
 @use "./breakpoints" as *;
 
 @mixin media-query($screen-size) {

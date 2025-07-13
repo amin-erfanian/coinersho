@@ -3,14 +3,15 @@
 import React, { useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import BaseInput from "../input/BaseInput";
-import styles from "./PasswordInput.module.scss";
+import styles from "./BasePasswordInput.module.scss";
 
 interface PasswordInputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  value: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value?: string;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   name: string;
   label?: string;
+  variant?: "outlined" | "text";
 }
 
 const PasswordInput: React.FC<PasswordInputProps> = ({
@@ -18,6 +19,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
   onChange,
   name,
   label,
+  variant,
   ...rest
 }) => {
   const [showPassword, setShowPassword] = useState(false);
@@ -31,6 +33,7 @@ const PasswordInput: React.FC<PasswordInputProps> = ({
       type={showPassword ? "text" : "password"}
       value={value}
       onChange={onChange}
+      variant={variant}
       append={
         <button
           type="button"

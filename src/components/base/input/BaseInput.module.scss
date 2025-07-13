@@ -1,5 +1,5 @@
 .field {
-  --label-color: var(--palette-text-on-main-30);
+  --label-color: var(--palette-text-30);
   --border-color: var(--palette-background);
 
   width: 100%;
@@ -27,7 +27,7 @@
   }
 
   &__icon {
-    color: var(--palette-text-on-main-10);
+    color: var(--palette-text-10);
   }
 
   &__label {

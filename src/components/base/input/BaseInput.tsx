@@ -20,7 +20,7 @@ interface BaseInputProps extends InputHTMLAttributes<HTMLInputElement> {
 const BaseInput: React.FC<BaseInputProps> = ({
   label = "",
   name,
-  direction = "rtl",
+  direction = "ltr",
   variant = "text",
   prepend,
   append,
