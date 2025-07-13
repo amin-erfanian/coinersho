@@ -9,7 +9,7 @@ export async function POST(req: NextRequest) {
     const { username } = await req.json();
 
     const externalLoginUrl = "https://randomuser.me/api/?result=1&nat=us";
-    const response = await axios.post(externalLoginUrl, {
+    const response = await axios.get(externalLoginUrl, {
       headers: {
         "Content-Type": "application/json",
       },
