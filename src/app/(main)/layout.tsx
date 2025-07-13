@@ -6,39 +6,45 @@ export default function MainLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
-      <header
-        style={{
-          position: "sticky",
-          top: 0,
-          backgroundColor: "#eee",
-          padding: "1rem",
-        }}
-      >
-        Header
-      </header>
+    <>
+      <TokenChecker />
 
-      <main
-        style={{
-          flexGrow: 1,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
+      <div
+        style={{ display: "flex", flexDirection: "column", height: "100vh" }}
       >
-        <TokenChecker>{children}</TokenChecker>
-      </main>
+        <header
+          style={{
+            position: "sticky",
+            top: 0,
+            backgroundColor: "#eee",
+            padding: "1rem",
+          }}
+        >
+          Header
+        </header>
 
-      <footer
-        style={{
-          position: "sticky",
-          bottom: 0,
-          backgroundColor: "#eee",
-          padding: "1rem",
-        }}
-      >
-        Footer
-      </footer>
-    </div>
+        <main
+          style={{
+            flexGrow: 1,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          {children}
+        </main>
+
+        <footer
+          style={{
+            position: "sticky",
+            bottom: 0,
+            backgroundColor: "#eee",
+            padding: "1rem",
+          }}
+        >
+          Footer
+        </footer>
+      </div>
+    </>
   );
 }

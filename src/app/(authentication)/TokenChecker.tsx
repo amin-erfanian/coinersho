@@ -10,8 +10,8 @@ export default function TokenChecker() {
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) {
-      router.replace("/auth");
+    if (token) {
+      router.replace("/dashboard");
     } else {
       setChecking(false);
     }
