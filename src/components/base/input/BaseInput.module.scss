@@ -1,0 +1,77 @@
+.field {
+  --label-color: var(--palette-text-on-main-30);
+  --border-color: var(--palette-background);
+
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.2s ease;
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    height: 100%;
+    position: relative;
+
+    &--text {
+      border: none;
+    }
+
+    &--outlined {
+      border: 1px solid var(--border-color);
+    }
+  }
+
+  &__icon {
+    color: var(--palette-text-on-main-10);
+  }
+
+  &__label {
+    right: 0;
+    top: 1rem;
+    position: absolute;
+    pointer-events: none;
+    color: var(--label-color);
+    transition: all 0.15s ease;
+    font-size: 1rem;
+  }
+
+  &__label--has-active,
+  &__input:focus ~ .field__label {
+    top: 0.25rem;
+    font-size: 0.875rem;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    padding: 0;
+    width: 100%;
+    background-color: transparent;
+    color: var(--palette-text-on-main-20);
+    font-size: 1rem;
+
+    &--hidden {
+      opacity: 0;
+    }
+
+    &:disabled {
+      color: var(--palette-container-background);
+    }
+
+    &:-webkit-autofill {
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: var(--palette-text-on-main-20);
+    }
+  }
+
+  &:has(.field__input:disabled) {
+    opacity: 0.5;
+    --label-color: var(--palette-text-on-main-30);
+    --border-color: var(--palette-text-on-main-30);
+  }
+}
