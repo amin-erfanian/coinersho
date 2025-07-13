@@ -47,7 +47,7 @@ const BaseInput: React.FC<BaseInputProps> = ({
         {prepend && <div className={styles.field__icon}>{prepend}</div>}
 
         <input
-          className="field__input"
+          className={styles.field__input}
           name={name}
           dir={direction}
           autoComplete={autoComplete}
