@@ -1,4 +1,4 @@
-import TokenChecker from "./TokenChecker";
+import TokenChecker from "@/components/general/token-checker/TokenChecker";
 
 export default function MainLayout({
   children,
@@ -7,7 +7,7 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <TokenChecker />
+      <TokenChecker redirectPath="/auth" />
 
       <div
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}

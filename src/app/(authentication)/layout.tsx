@@ -1,11 +1,11 @@
+import TokenChecker from "@/components/general/token-checker/TokenChecker";
 import React from "react";
 import type { ReactNode } from "react";
-import TokenChecker from "./TokenChecker";
 
 const AuthLayout = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <TokenChecker />
+      <TokenChecker redirectPath="/dashboard" />
       <div
         style={{
           minHeight: "100vh",
