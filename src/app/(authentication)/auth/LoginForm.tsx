@@ -59,12 +59,12 @@ const LoginForm = () => {
         <div className={styles["login-form__field"]}>
           <BaseInput
             variant="outlined"
-            placeholder="username"
-            {...register("username")}
+            placeholder="phone"
+            {...register("phone")}
           />
-          {errors.username && (
+          {errors.phone && (
             <p className={styles["login-form__error"]}>
-              {errors.username.message}
+              {errors.phone.message}
             </p>
           )}
         </div>

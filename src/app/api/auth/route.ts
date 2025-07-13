@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "dummy_secret";
 
 export async function POST(req: NextRequest) {
   try {
-    const { username } = await req.json();
+    const { phone } = await req.json();
 
     const externalLoginUrl = "https://randomuser.me/api/?result=1&nat=us";
     const response = await axios.get(externalLoginUrl, {
@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     });
     console.log(response);
 
-    const token = jwt.sign({ username }, JWT_SECRET, {
+    const token = jwt.sign({ phone }, JWT_SECRET, {
       expiresIn: "1d",
     });
 
