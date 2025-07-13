@@ -84,6 +84,7 @@ const LoginForm = () => {
             size="small"
             isLoading={isSubmitting}
             disabled={isSubmitting}
+            block
           >
             Submit
           </BaseButton>

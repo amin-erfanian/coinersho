@@ -38,14 +38,14 @@ const BaseInput: React.FC<BaseInputProps> = ({
 
   return (
     <div className={styles.field}>
-      {prepend && <div className={styles.field__icon}>{prepend}</div>}
-
       <div
         className={classNames(
           styles.field__content,
           styles[`field__content--${variant}`]
         )}
       >
+        {prepend && <div className={styles.field__icon}>{prepend}</div>}
+
         <input
           className="field__input"
           name={name}
@@ -66,9 +66,9 @@ const BaseInput: React.FC<BaseInputProps> = ({
             {label}
           </label>
         )}
-      </div>
 
-      {append && <div className={styles.field__icon}>{append}</div>}
+        {append && <div className={styles.field__icon}>{append}</div>}
+      </div>
     </div>
   );
 };
