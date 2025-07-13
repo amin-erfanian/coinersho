@@ -7,7 +7,7 @@ export default function MainLayout({
 }) {
   return (
     <>
-      <TokenChecker redirectPath="/auth" />
+      <TokenChecker />
 
       <div
         style={{ display: "flex", flexDirection: "column", height: "100vh" }}

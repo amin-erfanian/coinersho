@@ -1,25 +1,31 @@
 "use client";
 
 import FullScreenLoader from "@/components/general/full-screen-loading/FullScreenLoading";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-export default function TokenChecker({
-  redirectPath,
-}: {
-  redirectPath: string;
-}) {
+const PROTECTED_ROUTES = ["/dashboard"];
+const PUBLIC_ROUTES = ["/auth"];
+
+export default function TokenChecker() {
   const router = useRouter();
+  const pathname = usePathname();
   const [checking, setChecking] = useState(true);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (!token) {
-      router.replace(redirectPath);
+
+    const isProtected = PROTECTED_ROUTES.some((r) => pathname.startsWith(r));
+    const isPublic = PUBLIC_ROUTES.some((r) => pathname.startsWith(r));
+
+    if (isProtected && !token) {
+      router.replace("/auth");
+    } else if (isPublic && token) {
+      router.replace("/dashboard");
     } else {
       setChecking(false);
     }
-  }, [router, redirectPath]);
+  }, [router, pathname]);
 
   if (checking) return <FullScreenLoader />;
   return null;
