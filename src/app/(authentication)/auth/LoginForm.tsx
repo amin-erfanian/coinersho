@@ -1,6 +1,5 @@
 "use client";
 
-// import ErrorMessage from "@/app/components/ErrorMessage";
 import axios from "axios";
 import { formSchema } from "@/schema/formSchema";
 import { z } from "zod";
@@ -13,9 +12,12 @@ import { useState } from "react";
 import BaseButton from "@/components/base/button/BaseButton";
 import BaseInput from "@/components/base/input/BaseInput";
 import BasePasswordInput from "@/components/base/password-input/BasePasswordInput";
-import Spinner from "@/components/general/spinner/Spinner";
 
 import styles from "./LoginForm.module.scss";
+
+interface LoginResponse {
+  token: string;
+}
 
 type LoginFormData = z.infer<typeof formSchema>;
 
@@ -39,7 +41,9 @@ const LoginForm = () => {
           resolve("delayed");
         }, 2000)
       );
-      await axios.post("/api/auth", data);
+      const response = await axios.post<LoginResponse>("/api/auth", data);
+      const { token } = response.data;
+      localStorage.setItem("token", token);
       router.push("/dashboard");
     } catch (error) {
       setSubmitting(false);
