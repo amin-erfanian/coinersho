@@ -1,0 +1,120 @@
+.button {
+  --btn-min-width: 168px;
+  --btn-filled-color: var(--palette-on-primary);
+  --btn-success-filled-color: var(--palette-surface-container-lowest);
+  --btn-text-color: var(--palette-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  min-width: var(--btn-min-width);
+  padding: 0.625rem;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: background-color 0.15s ease-out;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.56;
+  }
+
+  &__label,
+  &__leading_icon,
+  &__trailing_icon {
+    z-index: 1;
+  }
+
+  &_block {
+    width: 100%;
+  }
+
+  &_size_large {
+    font-size: 1rem;
+    height: 56px;
+  }
+
+  &_size_medium {
+    font-size: 0.9375rem;
+    height: 48px;
+  }
+
+  &_size_small {
+    font-size: 0.8125rem;
+    height: 32px;
+    padding: 0.5rem;
+
+    & .button__leading_icon,
+    & .button__trailing_icon {
+      width: 16px;
+    }
+  }
+
+  &_variant_filled {
+    background-color: var(--palette-primary);
+
+    & .button__label,
+    & .button__leading_icon,
+    & .button__trailing_icon {
+      color: var(--btn-filled-color);
+    }
+
+    &:hover:not(:disabled)::before {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &_variant_success-filled {
+    background-color: var(--palette-green);
+
+    & .button__label,
+    & .button__leading_icon,
+    & .button__trailing_icon {
+      color: var(--btn-success-filled-color);
+    }
+
+    &:hover:not(:disabled)::before {
+      background-color: rgba(0, 0, 0, 0.08);
+    }
+  }
+
+  &_variant_text {
+    background-color: transparent;
+
+    & .button__label,
+    & .button__leading_icon,
+    & .button__trailing_icon {
+      color: var(--btn-text-color);
+    }
+
+    &:hover:not(:disabled)::before {
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+  }
+}
+
+/* Simple circular loading indicator */
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top: 2px solid rgba(255, 255, 255, 1);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
