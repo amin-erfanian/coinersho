@@ -32,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fa" dir="rtl" className={iranYekan.variable}>
+    <html className={iranYekan.variable}>
       <body>{children}</body>
     </html>
   );

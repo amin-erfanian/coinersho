@@ -1,0 +1,19 @@
+.login-form {
+  width: 100%;
+  padding: 2rem;
+
+  &__field {
+    margin-bottom: 1.5rem;
+  }
+
+  &__button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  &__error {
+    color: #e63946;
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+  }
+}
